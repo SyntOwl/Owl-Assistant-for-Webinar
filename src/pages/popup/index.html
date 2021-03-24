@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="extTitle">Owl-Assistant</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="ux.js"></script>
+    <script src="../util.js"></script>
+    <script src="../visualUtil.js"></script>
+    <script src="../translation.js"></script>
+</head>
+<body>
+<header>
+
+</header>
+<section id="extOffOn">
+    <fieldset id="mainSettings">
+        <div class="syntCheckbox">
+            <input aria-hidden="true" id="OnOffSwitch" type="checkbox"> <label for="OnOffSwitch"></label>
+            <label for="OnOffSwitch" id="OnOffSwitch_label">
+                <span data-i18n="extTitle">extTitle</span> <span id="extStatus">extStatus</span>
+            </label>
+        </div>
+    </fieldset>
+    <fieldset id="secondarySettings">
+        <div class="syntCheckbox">
+            <input aria-hidden="true" id="PresenceControlSwitch" type="checkbox">
+            <label data-i18n="popup_PresenceControlTitle" for="PresenceControlSwitch" id="PresenceControl_title">popup_PresenceControlTitle</label>
+        </div>
+        <div class="syntCheckbox">
+            <input aria-hidden="true" id="ConnectionQualitySwitch" type="checkbox">
+            <label data-i18n="popup_ConnectionQualityTitle" for="ConnectionQualitySwitch" id="ConnectionQuality_title">popup_ConnectionQualityTitle</label>
+        </div>
+        <div class="syntCheckbox">
+            <input aria-hidden="true" id="HintsSwitch" type="checkbox">
+            <label data-i18n="popup_HintsTitle" for="HintsSwitch" id="Hints_title">popup_HintsTitle</label>
+        </div>
+        <div class="syntCheckbox">
+            <input aria-hidden="true" id="NoOfflineSwitch" type="checkbox">
+            <label data-i18n="popup_NoOfflineTitle" for="NoOfflineSwitch"
+                   id="NoOffline_title">popup_NoOfflineTitle</label>
+        </div>
+        <div class="syntCheckbox">
+            <input aria-hidden="true" id="TwinkleSwitch" type="checkbox">
+            <label data-i18n="popup_TwinkleTitle" for="TwinkleSwitch"
+                   id="Twinkle_title">popup_TwinkleTitle</label>
+        </div>
+    </fieldset>
+    <fieldset id="audioSettings">
+        <div class="syntSlider">
+            <label data-i18n="popup_AudioTitle" for="AudioSlider">popup_AudioTitle</label>
+            <input id="AudioSlider" max="100" min="1" type="range" value="100">
+        </div>
+    </fieldset>
+</section>
+<footer>
+    <div>
+        <a class="button" data-i18n="footerAboutTitle" href="https://vk.com/public29217502" id="aboutTitle"
+           target="_blank">aboutTitle</a>
+        <a class="button" data-i18n="footerSettingsTitle" href="../options/index.html" target="_blank">footerSettingsTitle</a>
+    </div>
+    <p id="author"><span data-i18n="popupAuthor">Автор</span> <span class="shuffle" data-i18n="author">SyntOwl</span>
+    </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "extName": {
+    "message": "Owl-Assistant для Webinar"
+  },
+  "extDescription": {
+    "message": "Расширение для облегчения взаимодействия зрителя с Webinar.ru"
+  },
+  "extTitle": {
+    "message": "Owl-Assistant"
+  },
+  "footerAboutTitle": {
+    "message": "Об Owl-Assistant"
+  },
+  "footerSettingsTitle": {
+    "message": "Настроки"
+  },
+  "statusOn": {
+    "message": "включен"
+  },
+  "statusOff": {
+    "message": "выключен"
+  },
+  "popupAuthor": {
+    "message": "Автор:"
+  },
+  "popup_PresenceControlTitle": {
+    "message": "Подтверждение присутствия"
+  },
+  "popup_ConnectionQualityTitle": {
+    "message": "Закрытие окна проверки качества связи"
+  },
+  "popup_HintsTitle": {
+    "message": "Закрытие окон с подсказками"
+  },
+  "popup_NoOfflineTitle": {
+    "message": "Постоянное присутствие"
+  },
+  "popup_TwinkleTitle": {
+    "message": "Фаерочка"
+  },
+  "popup_AudioTitle": {
+    "message": "Громкость"
+  },
+  "optionsTitle": {
+    "message": "Настройки Owl-Assistant"
+  },
+  "presenceControlTitle": {
+    "message": "Контроль присутствия"
+  },
+  "optionsSecondsBetweenPolls": {
+    "message": "Количество секунд между опросами:"
+  },
+  "optionsXPathDescriptionConfirmButton": {
+    "message": "xPath кнопки подтверждения присутствия"
+  },
+  "optionsXPathCloseButton": {
+    "message": "xPath закрытия"
+  },
+  "errorInputSecondsBetweenMainLoopIntervalInt": {
+    "message": "Количество секунд должно находиться в диапазоне от 1 до 60 включительно"
+  },
+  "errorInputXPathString": {
+    "message": "xPath введен не правильно"
+  },
+  "legendPresenceControl": {
+    "message": "Контроль приутсвтия"
+  },
+  "legendConnectionQuality": {
+    "message": "Качество связи"
+  },
+  "legendHints": {
+    "message": "Подсказки"
+  },
+  "legendTwinkle": {
+    "message": "Фаерочка"
+  },
+  "optionsKeyTwinkle": {
+    "message": "Кнопка для зажатия фаерочки:"
+  },
+  "optionsSave": {
+    "message": "Сохранить"
+  },
+  "optionsCancel": {
+    "message": "Сбросить изменения"
+  },
+  "optionsRestore": {
+    "message": "Настройки по умолчанию"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "jsdom": "^16.5.1",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0"
+  }
+}

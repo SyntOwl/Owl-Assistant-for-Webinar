@@ -1,0 +1,93 @@
+{
+  "extName": {
+    "message": "Owl-Assistant for Webinar"
+  },
+  "extDescription": {
+    "message": "Extension to facilitate the interaction of the viewer with Webinar.ru"
+  },
+  "extTitle": {
+    "message": "Owl-Assistant"
+  },
+  "footerAboutTitle": {
+    "message": "On Owl-Assistant"
+  },
+  "footerSettingsTitle": {
+    "message": "Options"
+  },
+  "statusOn": {
+    "message": "on"
+  },
+  "statusOff": {
+    "message": "off"
+  },
+  "popupAuthor": {
+    "message": "Author:"
+  },
+  "popup_PresenceControlTitle": {
+    "message": "Confirm of attendance"
+  },
+  "popup_ConnectionQualityTitle": {
+    "message": "Closing the QoS window"
+  },
+  "popup_HintsTitle": {
+    "message": "Close tooltip windows"
+  },
+  "popup_NoOfflineTitle": {
+    "message": "Permanent online"
+  },
+  "popup_TwinkleTitle": {
+    "message": "Twinkle"
+  },
+  "popup_AudioTitle": {
+    "message": "Volume"
+  },
+  "optionsTitle": {
+    "message": "Options Owl-Assistant"
+  },
+  "presenceControlTitle": {
+    "message": "Presence control"
+  },
+  "optionsSecondsBetweenPolls": {
+    "message": "Page search interval in seconds:"
+  },
+  "optionsXPathDescriptionConfirmButton": {
+    "message": "xPath presence confirmation buttons"
+  },
+  "optionsXPathCloseButton": {
+    "message": "xPath close button"
+  },
+  "errorInputSecondsBetweenMainLoopIntervalInt": {
+    "message": "The number of seconds should be in the range from 1 to 60 inclusive"
+  },
+  "legendPresenceControl": {
+    "message": "Presence control"
+  },
+  "legendConnectionQuality": {
+    "message": "Connection  quality"
+  },
+  "legendHints": {
+    "message": "Hints"
+  },
+  "legendTwinkle": {
+    "message": "Twinkle"
+  },
+  "optionsKeyTwinkle": {
+    "message": "Button for clamping twinkle:"
+  },
+  "errorInputXPathString": {
+    "message": "xPath is not entered correctly"
+  },
+  "optionsSave": {
+    "message": "Save"
+  },
+  "optionsCancel": {
+    "message": "Reset"
+  },
+  "optionsRestore": {
+    "message": "Default settings"
+  },
+
+  "author": {
+    "message": "SyntOwl"
+  }
+}

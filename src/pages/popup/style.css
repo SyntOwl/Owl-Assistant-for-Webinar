@@ -1,0 +1,26 @@
+@import "../base.css";
+
+body {
+    background: var(--background-collor);
+    color: var(--main-collor);
+    font-family: var(--font);
+    width: 28em;
+}
+
+.offline {
+    color: red;
+}
+
+fieldset {
+    border: thin groove white;
+    padding: .5em;
+}
+
+footer div {
+    display: flex;
+}
+
+#author {
+    text-align: right;
+    font-size: small;
+}

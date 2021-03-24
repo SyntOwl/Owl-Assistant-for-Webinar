@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="extTitle"></title>
+    <link href="style.css" rel="stylesheet">
+    <script src="ux.js"></script>
+    <script src="../util.js"></script>
+
+    <script src="../translation.js"></script>
+</head>
+<body>
+<header>
+    <h1 data-i18n="optionsTitle">optionsTitle</h1>
+</header>
+
+<section>
+    <fieldset id="SecondsBetweenPolls">
+        <label data-i18n="optionsSecondsBetweenPolls"
+               for="SecondsBetweenMainLoopIntervalInt">optionsSecondsBetweenPolls</label>
+
+        <div class="syntInputNumber">
+            <input id="SecondsBetweenMainLoopIntervalInt" max="60" maxlength="2" min="1" step="1" type="number"/>
+        </div>
+        <span class="errorLabel" data-i18n="errorInputSecondsBetweenMainLoopIntervalInt" hidden=""
+              id="errorSecondsBetweenMainLoopInterval">errorInputSecondsBetweenMainLoopIntervalInt
+        </span>
+    </fieldset>
+    <fieldset id="PresenceControl">
+        <legend data-i18n="legendPresenceControl">PresenceControl</legend>
+        <label data-i18n="optionsXPathDescriptionConfirmButton"
+               for="XPathDescriptionConfirmButtonActivityString">optionsXPathDescriptionConfirmButtonActivityChecker</label>
+        <br>
+        <div class="syntInputText">
+            <input id="XPathDescriptionConfirmButtonActivityString" type="text"/>
+        </div>
+        <br>
+        <span class="errorLabel" data-i18n="errorInputXPathString" hidden=""
+              id="errorXPathDescriptionConfirmButtonActivityChecker">errorInputXPathString</span>
+        <br>
+
+        <label data-i18n="optionsXPathCloseButton"
+               for="XPathDescriptionCloseButtonActivityString">optionsXPathDescriptionCloseButtonActivityChecker</label>
+        <br>
+        <div class="syntInputText">
+            <input id="XPathDescriptionCloseButtonActivityString" type="text"/>
+        </div>
+        <br>
+        <span class="errorLabel" data-i18n="errorInputXPathString" hidden=""
+              id="errorXPathDescriptionCloseButtonActivityChecker">errorInputXPathString</span>
+    </fieldset>
+    <fieldset id="ConnectionQuality">
+        <legend data-i18n="legendConnectionQuality">ConnectionQuality</legend>
+        <label data-i18n="optionsXPathCloseButton"
+               for="XPathCloseButtonConnectionQualityString">optionsXPathCloseButtonConnectionQuality</label>
+        <br>
+        <div class="syntInputText">
+            <input id="XPathCloseButtonConnectionQualityString" type="text"/>
+        </div>
+        <br>
+        <span class="errorLabel" data-i18n="errorInputXPathString" hidden=""
+              id="errorXPathCloseButtonConnectionQuality">errorInputXPathString</span>
+    </fieldset>
+    <fieldset id="Hints">
+        <legend data-i18n="legendHints">Hints</legend>
+        <label data-i18n="optionsXPathCloseButton"
+               for="XPathCloseButtonHintsString">optionsXPathCloseButtonHints</label>
+        <br>
+        <div class="syntInputText">
+            <input id="XPathCloseButtonHintsString" type="text"/>
+        </div>
+        <br>
+        <span class="errorLabel" data-i18n="errorInputXPathString" hidden="" id="errorXPathCloseButtonHints">errorInputXPathString</span>
+    </fieldset>
+    <fieldset id="Twinkle">
+        <legend data-i18n="legendTwinkle">legendTwinkle</legend>
+        <label data-i18n="optionsKeyTwinkle"
+               for="KeyTwinkleString">optionsKeyTwinkle</label>
+        <div class="syntInputKey">
+            <input class="customKey" id="KeyTwinkleString" type="text"/>
+        </div>
+    </fieldset>
+    <div class="ButtonControl">
+        <button class="button" data-i18n="optionsSave" id="Save">optionsSave</button>
+        <button class="button" data-i18n="optionsCancel" id="Cancel">optionsCancel</button>
+        <button class="button" data-i18n="optionsRestore" id="Restore">optionsRestore</button>
+    </div>
+</section>
+
+</body>
+</html>

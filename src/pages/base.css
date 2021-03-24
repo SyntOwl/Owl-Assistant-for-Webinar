@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+
+:root {
+    --font: 'Kelly Slab', cursive;
+    --background-collor: black;
+    --secondary-background-collor: #1e1e1e;
+    --main-collor: white;
+    --secondary-collor: dodgerblue;
+    --shape-normal: polygon(0 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%);
+    --shape-thin: polygon(0 0, 100% 0, 100% calc(100% - .625rem), calc(100% - .625rem) 100%, 0 100%, 0 .095rem, 0.095rem .095rem, 0.095rem calc(100% - .095rem), calc(100% - .72rem) calc(100% - .095rem), calc(100% - .095rem) calc(100% - .72rem), calc(100% - .095rem) .095rem, 0 .095rem);
+    --shape-large: polygon(0 0, 100% 0, 100% calc(100% - .625rem), calc(100% - .625rem) 100%, 0 100%, 0 .25rem, .25rem .25rem, .25rem calc(100% - .25rem), calc(100% - .75rem) calc(100% - .25rem), calc(100% - .25rem) calc(100% - 12px), calc(100% - .25rem) .25rem, 0 .25rem);
+    --btn-border-thickness: .1rem;
+    --input-border-thickness: .05rem;
+}
+
+label {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: white;
+    font-size: small;
+}
+
+legend {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: large;
+}
+
+/*Checkbox*/
+
+.syntCheckbox {
+    margin: 1em;
+}
+
+.syntCheckbox input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+
+.syntCheckbox input[type=checkbox] + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+.syntCheckbox input[type=checkbox] + label:before {
+    content: '';
+    margin-right: .625rem;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: black;
+    border: .05rem solid #888;
+}
+
+.syntCheckbox input[type=checkbox]:hover + label:before,
+.syntCheckbox input[type=checkbox]:focus + label:before,
+.syntCheckbox input[type=checkbox]:checked:hover + label:before,
+.syntCheckbox input[type=checkbox]:checked:focus + label:before {
+    opacity: 1;
+    border-color: var(--secondary-collor);
+}
+
+.syntCheckbox input[type=checkbox]:checked + label:before {
+    border-color: white;
+}
+
+.syntCheckbox input[type=checkbox]:disabled + label {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.syntCheckbox input[type=checkbox]:disabled + label:before {
+    opacity: .9;
+    border-color: initial;
+}
+
+.syntCheckbox input[type=checkbox]:checked + label:after {
+    content: '';
+    position: absolute;
+    background: white;
+    left: 0.15rem;
+    top: 0.15rem;
+    width: 1rem;
+    height: 1rem;
+    animation: lighting-effect-deep 1s forwards;
+}
+
+/*Button*/
+
+.button {
+    transition-property: letter-spacing, padding-bottom, padding-left, padding-right, padding-top, background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    color: var(--main-collor);
+    background-color: var(--main-collor);
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 0;
+    margin: 0.2rem;
+    cursor: pointer;
+    clip-path: var(--shape-normal);
+    font-weight: 600;
+    font-size: .75rem;
+    letter-spacing: .12rem;
+    padding: 0.7em 1rem 0.7rem 0.5rem;
+    position: relative;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #000;
+    top: var(--btn-border-thickness);
+    left: var(--btn-border-thickness);
+    width: calc(100% - 2 * var(--btn-border-thickness));
+    height: calc(100% - 2 * var(--btn-border-thickness));
+    clip-path: var(--shape-normal);
+    z-index: -1;
+}
+
+.button:hover,
+.button:focus {
+    color: var(--background-collor);
+    background-color: var(--main-collor);
+    animation: lighting-effect-deep 2s forwards;
+}
+
+.button:hover::after,
+.button:focus::after {
+    background-color: #fff;
+}
+
+.button[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.button[disabled]:hover,
+.button[disabled]:hover::after {
+    color: var(--main-collor);
+    transition: none;
+    animation: none;
+}
+
+.button[disabled]::after {
+    background-color: #000;
+}
+
+/*Input Text*/
+
+.syntInputText {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+.syntInputText::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--main-collor);
+    top: calc(var(--input-border-thickness) * -1px);
+    left: calc(var(--input-border-thickness) * -1px);
+    width: calc(100% + 2 * var(--input-border-thickness));
+    height: calc(100% + 2 * var(--input-border-thickness));
+    clip-path: var(--shape-thin);
+    transition: .5s ease;
+    z-index: 1;
+}
+
+.syntInputText input[type=text] {
+    color: var(--main-collor);
+    background-color: var(--secondary-background-collor);
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    flex: 2;
+    transition: .5s ease;
+    font-size: 1rem;
+    height: 1.5rem;
+    padding: .7rem;
+    position: relative;
+}
+
+.syntInputText input[type=text][disabled] {
+    cursor: not-allowed;
+}
+
+.syntInputText:focus-within::before {
+    clip-path: var(--shape-large);
+}
+
+/*Input Number*/
+
+.syntInputNumber {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+}
+
+.syntInputNumber::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--main-collor);
+    top: calc(var(--input-border-thickness) * -1px);
+    left: calc(var(--input-border-thickness) * -1px);
+    width: calc(100% + 2 * var(--input-border-thickness));
+    height: calc(100% + 2 * var(--input-border-thickness));
+    clip-path: var(--shape-thin);
+    transition: .5s ease;
+    z-index: 1;
+}
+
+.syntInputNumber input[type=number] {
+    color: var(--main-collor);
+    background-color: var(--secondary-background-collor);
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    flex: 2;
+    transition: .5s ease;
+    font-size: 1rem;
+    height: 1.5rem;
+    padding: .5rem;
+    position: relative;
+}
+
+.syntInputNumber input[type=number][disabled] {
+    cursor: not-allowed;
+}
+
+.syntInputNumber:focus-within::before {
+    clip-path: var(--shape-large);
+}
+
+/*Input Key*/
+
+.syntInputKey {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+}
+
+.syntInputKey::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--main-collor);
+    top: calc(var(--input-border-thickness) * -1px);
+    left: calc(var(--input-border-thickness) * -1px);
+    width: calc(100% + 2 * var(--input-border-thickness));
+    height: calc(100% + 2 * var(--input-border-thickness));
+    clip-path: var(--shape-thin);
+    transition: .5s ease;
+    z-index: 1;
+}
+
+.syntInputKey input[type=text] {
+    color: var(--main-collor);
+    background-color: var(--secondary-background-collor);
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    flex: 2;
+    transition: .5s ease;
+    font-size: 1rem;
+    height: 1.5rem;
+    padding: .5rem;
+    position: relative;
+}
+
+.syntInputKey input[type=text][disabled] {
+    cursor: not-allowed;
+}
+
+.syntInputKey:focus-within::before {
+    clip-path: var(--shape-large);
+}
+
+/*Input Slider*/
+
+.syntSlider {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Input Text/Number/Key */
+
+.syntInputText.syntError::before,
+.syntInputNumber.syntError::before,
+.syntInputKey.syntError::before {
+    background-color: red;
+}
+
+
+@keyframes lighting-effect-deep {
+    0% {
+        opacity: .9
+    }
+
+    10% {
+        opacity: .2
+    }
+
+    20% {
+        opacity: .9
+    }
+
+    40% {
+        opacity: .2
+    }
+
+    to {
+        opacity: 1
+    }
+}

@@ -1,0 +1,47 @@
+@import "../base.css";
+
+body {
+    background: var(--background-collor);
+    color: var(--main-collor);
+    font-family: var(--font);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 40%;
+    display: block;
+}
+
+fieldset {
+    border: thin groove white;
+    padding: 2em;
+}
+
+#SecondsBetweenMainLoopIntervalInt {
+    width: 3em;
+    text-align: center;
+}
+
+#KeyTwinkleString {
+    width: 2em;
+    text-align: center;
+}
+
+.ButtonControl {
+    margin-top: 1em;
+    display: flex;
+}
+
+.errorLabel {
+    margin: 0.5em;
+    color: red;
+}
+
+#SecondsBetweenPolls,
+#Twinkle {
+    display: flex;
+    align-items: center;
+}
+
+#Cancel {
+    margin-left: auto;
+}
