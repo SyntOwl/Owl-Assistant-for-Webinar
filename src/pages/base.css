@@ -393,6 +393,31 @@ legend {
     background: #1e1e1e;
 }
 
+.syntSlider input[type=range]:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.syntSlider input[type=range]:disabled::-webkit-slider-runnable-track {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.syntSlider input[type=range]:disabled::-moz-range-track {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.syntSlider input[type=range]:disabled::-webkit-slider-thumb {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.syntSlider input[type=range]:disabled::-moz-range-thumb {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
 /*Input Text/Number/Key */
 
 .syntInputText.syntError::before,
