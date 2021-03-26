@@ -19,9 +19,6 @@
 (function () {
 
     let settings = {};
-    let videoElement;
-    let findVideoIntervalId;
-    let videoCheckId;
     let mainIntervalId;
 
     window.addEventListener("load", function () {
@@ -55,36 +52,9 @@
 
             });
 
-            RunVideoCheckLoop();
             RunMainLoop();
         })
     })
-
-    function RunVideoCheckLoop() {
-        if (!videoCheckId) {
-            videoCheckId = setInterval(VideoCheckLoop, 500);
-        }
-    }
-
-    function StopVideoCheckLoop() {
-        clearInterval(videoCheckId);
-        videoCheckId = null;
-
-    }
-
-    function VideoCheckLoop() {
-        if (ValidateVideo(videoElement)) {
-            UpdateVideoVolume();
-        } else {
-            StopVideoCheckLoop();
-            FindVideo().then(function (state) {
-                if (state === "Found") {
-                    UpdateVideoVolume();
-                    RunVideoCheckLoop();
-                }
-            });
-        }
-    }
 
     function ParseSetValuesAndMakeChanges(changes) {
         for (let prop in changes) {
@@ -100,7 +70,7 @@
                         StopMainLoop();
                     }
                 } else if (prop === "audioVolume") {
-                    UpdateVideoVolume();
+                    HandleVideo();
                 }
 
             }
@@ -109,7 +79,7 @@
 
     function ValidateVideo(video) {
         if (video) {
-            if ((!video.currentSrc.includes("fakeVideo.mp4")) && video.error === null) {
+            if ((!video.currentSrc.includes("fakeVideo.mp4")) && video.isConnected === true) {
                 return true;
             }
         }
@@ -117,27 +87,18 @@
     }
 
     function FindVideo() {
-        videoElement = null;
-        return new Promise((resolve, reject) => {
-            if (!findVideoIntervalId) {
-                findVideoIntervalId = setInterval(function () {
-                    let video = document.querySelector('video');
-                    if (ValidateVideo(video)) {
-                        clearInterval(findVideoIntervalId);
-                        findVideoIntervalId = null;
-
-                        videoElement = video;
-                        resolve("Found");
-                    }
-                }, 500);
-            } else {
-                reject("SearchAlreadyRunning");
+        let videos = document.querySelectorAll('video');
+        let validVideos = [];
+        videos.forEach(video => {
+            if (ValidateVideo(video)){
+                validVideos.push(video);
             }
         });
+        return validVideos;
     }
 
-    function UpdateVideoVolume() {
-        videoElement.volume = settings.audioVolume;
+    function UpdateVideoVolume(VideoElement) {
+        VideoElement.volume = settings.audioVolume;
     }
 
     function RunMainLoop() {
@@ -199,6 +160,13 @@
         return false;
     }
 
+    function HandleVideo(){
+        let videos = FindVideo();
+        videos.forEach(video => {
+            UpdateVideoVolume(video);
+        })
+    }
+
     function HandleActivityChecker() {
         let button = FindOneUniqueItemByXPath(settings.xPathConfirmButtonActivityChecker);
         if (button) {
@@ -248,6 +216,7 @@
         if (settings.enableCheckerHints) {
             HandleHints();
         }
+        HandleVideo();
     }
 
 }())
