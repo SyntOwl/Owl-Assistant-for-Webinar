@@ -151,13 +151,21 @@
         return results;
     }
 
-    function PressTwinkle() {
-        let button = FindOneUniqueItemByXPath(settings.xPathTwinkleButton);
+    /**
+     * @param {string} xPath
+     * @return boolean isPressed
+     */
+    function ClickButton(xPath) {
+        let button = FindOneUniqueItemByXPath(xPath);
         if (button) {
             button.click();
             return true;
         }
         return false;
+    }
+
+    function PressTwinkle() {
+        return ClickButton(settings.xPathTwinkleButton);
     }
 
     function HandleVideo(){
@@ -168,31 +176,20 @@
     }
 
     function HandleActivityChecker() {
-        let button = FindOneUniqueItemByXPath(settings.xPathConfirmButtonActivityChecker);
-        if (button) {
-            button.click();
-
+        let isPressed = ClickButton(settings.xPathConfirmButtonActivityChecker);
+        if (isPressed) {
             setTimeout(function () {
-                let button = FindOneUniqueItemByXPath(settings.xPathCloseButtonActivityChecker);
-                if (button) {
-                    button.click();
-                }
+                ClickButton(settings.xPathCloseButtonActivityChecker);
             }, 1000);
         }
     }
 
     function HandleConnectionQuality() {
-        let button = FindOneUniqueItemByXPath(settings.xPathCloseButtonConnectionQuality);
-        if (button) {
-            button.click();
-        }
+        ClickButton(settings.xPathCloseButtonConnectionQuality);
     }
 
     function HandleHints() {
-        let button = FindOneUniqueItemByXPath(settings.xPathCloseButtonHints);
-        if (button) {
-            button.click();
-        }
+        ClickButton(settings.xPathCloseButtonHints);
     }
 
     function FindOneUniqueItemByXPath(xPath, contextNode = document.body) {
