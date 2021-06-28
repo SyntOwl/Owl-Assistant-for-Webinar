@@ -3,7 +3,7 @@
   "default_locale": "en",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
-  "version": "0.1.4.0",
+  "version": "0.1.4.1",
   "permissions": [
     "storage",
     "*://events.webinar.ru/*",
