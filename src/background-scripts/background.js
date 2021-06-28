@@ -128,8 +128,9 @@
     function skipRequest(Info) {
         let isFocused = (nestedRead(Info, ['requestBody', 'formData', 'isFocused', 0]) === "false");
         let isSoundEnabled = (nestedRead(Info, ['requestBody', 'formData', 'isSoundEnabled', 0]) === "false");
+        let isVideoEnabled = (nestedRead(Info, ['requestBody', 'formData', 'isVideoEnabled', 0]) === "false");
 
-        return !((isFocused || isSoundEnabled) && enableCatchMessagesAboutOffline && enableExt);
+        return !((isFocused || isSoundEnabled || isVideoEnabled) && enableCatchMessagesAboutOffline && enableExt);
     }
 
     chrome.webRequest.onBeforeRequest.addListener(
